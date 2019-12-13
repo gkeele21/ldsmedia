@@ -1,13 +1,15 @@
 <template>
   <div class="icon-wrapper">
     <svg class="icon" :width="width" :height="height">
-      <use v-bind="{ 'xlink:href': '/feather-sprite.svg#' + name }" />
+      <use v-bind="{'xlink:href':'/feather-sprite.svg#' + name}"></use>
     </svg>
+    <slot></slot>
   </div>
 </template>
-
+    
 <script>
 export default {
+  name: 'Icon',
   props: {
     name: String,
     width: {
@@ -21,8 +23,8 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
+    
+<style scoped>
 .icon-wrapper {
   display: inline-flex;
   align-items: center;

@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <NavBar />
-    <router-view :key="$route.fullPath" />
+    <NavBar/>
+    <NotificationContainer/>
+    <router-view :key="$route.fullPath"/>
   </div>
 </template>
 
 <script>
 import NavBar from '@/components/NavBar.vue'
+import NotificationContainer from '@/components/NotificationContainer.vue'
 
 export default {
   components: {
-    NavBar
+    NavBar,
+    NotificationContainer
   }
 }
 </script>
+
 <style>
 html {
   -webkit-text-size-adjust: 100%;
@@ -212,6 +216,9 @@ textarea {
 [hidden] {
   display: none;
 }
+.error {
+  border: 1px solid red;
+}
 select {
   width: 100%;
   height: 52px;
@@ -237,5 +244,14 @@ select:focus::ms-value {
 }
 select::ms-expand {
   opacity: 0;
+}
+.field {
+  margin-bottom: 24px;
+}
+.error {
+  border: 1px solid red;
+}
+.errorMessage {
+  color: red;
 }
 </style>
